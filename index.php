@@ -8,6 +8,7 @@
                 place-items: center;
                 margin: 0;
                 font-family: sans-serif;
+                height: 100vh;
             }
         </style>
     </head>

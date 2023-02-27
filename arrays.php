@@ -26,24 +26,27 @@
                 'age' => 25,
             ]
         ];
+        function filterByAge(array $allStudents, $thresholdAge = 20): array
+        {
+            $filteredStudents = [];
+            foreach ($allStudents as $student) {
+                if($student['age'] > $thresholdAge) {
+                    $filteredStudents[] = $student;
+                }
+            }
 
-        $movies = [
-                [
-                    'name' => 'Movie 1',
-                    'producer' => 'Xyz',
-                ],
-                [
-                    'name' => 'Movie 2',
-                    'producer' => 'Abc',
-                ]
-        ];
+            return $filteredStudents;
+        }
+
+        $filteredData = filterByAge($students, 20);
+
     ?>
 
 
 
     <h1>Student names</h1>
     <ul>
-        <?php foreach($students as $student): ?>
+        <?php foreach($filteredData as $student): ?>
             <li><?= $student['name'] ?>: <?= $student['age'] ?></li>
         <?php endforeach; ?>
     </ul>

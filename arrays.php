@@ -14,31 +14,30 @@
     <?php
         $students = [
             [
-                'name' => 'Ali',
+                'name' => 'Ali Jaber',
                 'age' => 20,
+                'school' => 'School A',
             ],
             [
-                'name' => 'Asad',
+                'name' => 'Asad Khan',
                 'age' => 22,
+                'school' => 'School A',
             ],
             [
-                'name' => 'Abid',
+                'name' => 'Abid Rehman',
                 'age' => 25,
+                'school' => 'School B',
+            ],
+            [
+                'name' => 'Zahid Ullah',
+                'age' => 15,
+                'school' => 'School C',
             ]
         ];
-        function filterByAge(array $allStudents, $thresholdAge = 20): array
-        {
-            $filteredStudents = [];
-            foreach ($allStudents as $student) {
-                if($student['age'] > $thresholdAge) {
-                    $filteredStudents[] = $student;
-                }
-            }
 
-            return $filteredStudents;
-        }
-
-        $filteredData = filterByAge($students, 20);
+        $filteredData = array_filter($students, function ($item) {
+            return $item['age'] < 18;
+        });
 
     ?>
 
@@ -47,7 +46,7 @@
     <h1>Student names</h1>
     <ul>
         <?php foreach($filteredData as $student): ?>
-            <li><?= $student['name'] ?>: <?= $student['age'] ?></li>
+            <li><?= $student['name'] ?>: <?= $student['age'] ?>: <?= $student['school'] ?></li>
         <?php endforeach; ?>
     </ul>
 </body>

@@ -1,8 +1,8 @@
-<?php $title = 'Home'; ?>
+<?php $title = 'Contact'; ?>
+
 <?php require('partials/header.view.php'); ?>
 <?php require('partials/nav.view.php'); ?>
 
-<h1>Home page</h1>
+<h1>Contact page</h1>
 
 <?php require('partials/footer.view.php'); ?>
-
